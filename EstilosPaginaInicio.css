@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos barra menú */
+.barraNav{
+    background: linear-gradient(to right, #47ad79, #092422);
+    padding: 0 40px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1800px;   /* ancho máximo */
+}
+
+.menu .derecha {
+    margin-left: auto;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
+} 
+
+.menu li a:hover{
+    background-color: blueviolet;
+}
+
+.logo {
+    display: inline-block;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    vertical-align: middle;
+}
+
+.menuSesion{
+    width: 30px;
+    height: 30px;
+    border-radius: 60%;
+    border: 2px solid black;
+    list-style: none;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.titulo{
+    border-top: 0;
+}
