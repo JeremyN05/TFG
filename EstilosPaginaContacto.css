@@ -43,15 +43,66 @@ body{
     vertical-align: middle;
 }
 
-.menuSesion{
+/* CONTENEDOR DEL PERFIL */
+.menuSesion {
+    position: relative;
+    display: flex;
+    align-items: center;   /* 👈 centra verticalmente */
+    margin-left: 20px;
+}
+
+/* IMAGEN PERFIL */
+.fotoPerfil {
     width: 30px;
     height: 30px;
-    border-radius: 60%;
-    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    display: block; /* 👈 elimina espacio raro de imágenes inline */
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: absolute !important;   /* forzamos */
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+
+    background: white;
+    min-width: 170px;
     list-style: none;
-    vertical-align: middle;
-    overflow: hidden;
-    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+
+    z-index: 1000;  /* importante */
+}
+
+/* Cuando está activo */
+.dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu > li {
+    position: relative;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown li a:hover {
+    background-color: #f2f2f2;
 }
 
 .CajaContacto{
