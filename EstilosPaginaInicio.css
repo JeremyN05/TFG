@@ -105,17 +105,61 @@ body{
     background-color: #f2f2f2;
 }
 
-.titulo{
-    border-top: 0;
-}
-
-.animarScroll {
+.titulo {
+    font-size: 40px;
+    color: white;
     opacity: 0;
     transform: translateX(-100px);
-    transition: all 0.8s ease;
+    filter: blur(5px);
+    transition: 
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        filter 0.8s ease;
 }
 
-.animarScroll.visible {
+.titulo.visible {
     opacity: 1;
     transform: translateX(0);
+    filter: blur(0);
+}
+
+.subtitulo{
+    font-size: 25px;
+    color: white;
+    transform: translateX(+100px);
+    filter: blur(5px);
+    transition: 
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+.subtitulo.visible {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+#contPrincipal{
+    display: flex;
+    flex-direction: column; /* texto uno debajo del otro */
+    justify-content: center; /* vertical */
+    align-items: center;     /* horizontal */
+    height: 100vh;           /* ocupar toda la pantalla */
+    text-align: center;      /* opcional para subtítulo */
+
+    background-image: url(imagenTitulo.png);
+    background-size: contain;      /* o 'cover' si quieres que llene el div */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;                 /* espacio alrededor del texto */
+}
+
+#contInformacion{
+    background-color: black;
+    padding-bottom: 5%;
+}
+
+.info{
+    color: white;
 }

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    
     const perfil = document.querySelector(".fotoPerfil");
     const menu = document.querySelector(".dropdown");
 
@@ -12,16 +12,20 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.classList.remove("show");
     });
 
-     const elementos = document.querySelectorAll(".animarScroll");
+    const elemento1 = document.querySelectorAll(".titulo");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
-        });
+    elemento1.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add("visible");
+        }, index * 200);
     });
 
-    elementos.forEach(el => observer.observe(el));
+        const elemento2 = document.querySelectorAll(".subtitulo");
+
+    elemento2.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add("visible");
+        }, index * 200);
+    });
 
 });

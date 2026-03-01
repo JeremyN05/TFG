@@ -19,6 +19,12 @@ body{
     max-width: 1800px;
 }
 
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
 .menu .derecha {
     margin-left: auto;
 }
@@ -115,10 +121,13 @@ body{
     display: flex;
     margin: 0;
     background-color: #104541;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .caja1{
-    margin-left: 18%;
+    flex: 1;
+    min-width: 300px;
 }
 
 .caja2{
@@ -126,6 +135,8 @@ body{
     max-width: 600px;
     width: 100%;
     margin-left: 2%;
+    flex: 1;
+    min-width: 300px;
 }
 
 .titulo{
@@ -193,7 +204,7 @@ p{
 }
 
 textarea{
-    width: 594px;
+    width: 98%;
     height: 180px;
     background-color: #104541;
     color: white;
