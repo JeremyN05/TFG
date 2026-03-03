@@ -140,19 +140,48 @@ body{
     filter: blur(0);
 }
 
-#contPrincipal{
+#contPrincipal {
     display: flex;
-    flex-direction: column; /* texto uno debajo del otro */
-    justify-content: center; /* vertical */
-    align-items: center;     /* horizontal */
-    height: 100vh;           /* ocupar toda la pantalla */
-    text-align: center;      /* opcional para subtítulo */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+    padding: 2rem;
 
-    background-image: url(imagenTitulo.png);
-    background-size: contain;      /* o 'cover' si quieres que llene el div */
+    position: relative;
+    overflow: hidden;
+    color: white;
+
+}
+
+/* Fondo */
+#contPrincipal::before {
+    background-color: #104541;
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("imagenTitulo.png");
+    background-size: contain;   /* TU CONFIG ORIGINAL */
     background-position: center;
     background-repeat: no-repeat;
-    padding: 2rem;                 /* espacio alrededor del texto */
+
+    z-index: -1;
+
+    /* Empieza más pequeña pero mantiene proporción */
+    transform: scale(0.5);
+    opacity: 0;
+
+    animation: aparecerDesdeAtras 1s ease-out forwards;
+}
+
+/* Animación */
+@keyframes aparecerDesdeAtras {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 #contInformacion{
@@ -163,3 +192,38 @@ body{
 .info{
     color: white;
 }
+
+/*Estilos apartado sobre nosotros*/
+
+#contSobreNosotros{
+    display: flex;
+    background-color: white;
+}
+
+.textoSobreNosotros{
+    margin-left: auto;
+    width: 50%;
+}
+
+.tituInfoNosotros{
+    margin-left: 4%;
+    font-size: 30px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px){
+    #contSobreNosotros{
+        flex-direction: column;
+    }
+
+    .imagenSobreNosotros{
+        width: 100%;
+        margin-left: 0; 
+    }
+
+    .textoSobreNosotros{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
